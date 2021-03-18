@@ -43,6 +43,7 @@ parser.add_argument('--hidden_units', action='store', type=int, dest='hidden_uni
 parser.add_argument('--gpu', action='store_true', default=False,
                     help='Specify if you want to train your model using an available gpu')
 
+# Read the command line instructions and parse them
 args = parser.parse_args()
 
 # Here starts the data loading + NN training part
@@ -129,7 +130,6 @@ device = torch.device("cuda" if torch.cuda.is_available()
 # I stick to the Negative Logarithmic Likelihood Loss for discrete outputs
 criterion = nn.NLLLoss()
 # Adaptive momentum for the optimizer and quite low learning rate, at least to start off
-#optimizer = optim.Adam(model.classifier.parameters(), lr=args.lr)
 optimizer = optim.SGD(model.classifier.parameters(), lr=args.lr, momentum=0.8)
 
 model.to(device)
@@ -184,12 +184,11 @@ for epoch in range(args.epochs):
 
 #Save the checkpoint
 
-print('Saving checkpoint...')
-
 model.class_to_idx = train_data.class_to_idx
 
-checkpoint = {'input_units': flower_classifier[0].in_features,
-              'hidden_size': args.hidden_units,
+checkpoint = {'cnn': args.arch,
+              'input_units': flower_classifier[0].in_features,
+              'hidden_units': args.hidden_units,
               'output_units': 102,
               'dropout': 0.3,
               'state_dict': model.state_dict(),
@@ -199,8 +198,10 @@ checkpoint = {'input_units': flower_classifier[0].in_features,
               }
 
 parent_path = os.getcwd()+'/'
-os.makedirs(parent_path+args.checkpoint_save)
-new_path = os.path.join(parent_path+args.checkpoint_save+'/flower_checkpoint.pth')
+if not os.path.exists(parent_path+args.checkpoint_save):
+    os.makedirs(parent_path+args.checkpoint_save)
+new_path = os.path.join(
+    parent_path+args.checkpoint_save+'/flower_checkpoint.pth')
 torch.save(checkpoint, new_path)
 
 print('Model training ended, checkpoint successfully saved')
