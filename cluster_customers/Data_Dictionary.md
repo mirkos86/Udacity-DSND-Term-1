@@ -32,7 +32,7 @@ missing or unknown values.
 
 ## 1. Person-level features
 
-### 1.1. AGER_TYP
+### 1.1. ager_type
 Best-ager typology
 - -1: unknown
 -  0: no classification possible
@@ -40,7 +40,7 @@ Best-ager typology
 -  2: cultural elderly
 -  3: experience-driven elderly
 
-### 1.2. ALTERSKATEGORIE_GROB
+### 1.2. age_name
 Estimated age based on given name analysis
 - -1: unknown (missing)
 -  0: unknown (cannot be determined)
@@ -50,14 +50,14 @@ Estimated age based on given name analysis
 -  4: > 60 years old
 -  9: uniformly distributed
 
-### 1.3. ANREDE_KZ
+### 1.3. gender
 Gender
 - -1: unknown (missing)
 -  0: unknown (cannot be determined)
 -  1: male
 -  2: female
 
-### 1.4. CJT_GESAMTTYP
+### 1.4. comsumer_typ
 Customer-Journey-Typology: preferred information and buying channels for
 consumer
 - 0: unknown
@@ -68,8 +68,8 @@ consumer
 - 5: Advertising- and Cross-Channel-Enthusiast
 - 6: Advertising-Enthusiast with restricted Cross-Channel-Behaviour
 
-### 1.5. FINANZ_MINIMALIST, FINANZ_SPARER, FINANZ_VORSORGER, FINANZ_ANLEGER,
-###      FINANZ_UNAUFFAELLIGER, FINANZ_HAUSBAUER
+### 1.5. fin_min, fin_saver, fin_beprep, fin_inv, fin_incos
+###      fin_inv, fin_home_own
 Financial typology, for each dimension:
 - -1: unknown
 -  1: very high
@@ -79,14 +79,14 @@ Financial typology, for each dimension:
 -  5: very low
 
 Dimension translations:
-- MINIMALIST: low financial interest
-- SPARER: money-saver
-- VORSORGER: be prepared
-- ANLEGER: investor
-- UNAUFFAELLIGER: inconspicuous
-- HAUSBAUER: home ownership
+- min: low financial interest
+- saver: money-saver
+- beprep: be prepared
+- inv: investor
+- incos: inconspicuous
+- home_own: home ownership
 
-### 1.6. FINANZTYP
+### 1.6. fin_typ
 Most descriptive financial type for individual
 - -1: unknown
 -  1: low financial interest (MINIMALIST)
@@ -96,11 +96,11 @@ Most descriptive financial type for individual
 -  5: investor (ANLEGER)
 -  6: inconspicuous (UNAUFFAELLIGER)
 
-### 1.7. GEBURTSJAHR
+### 1.7. birth_year
 Year of birth
 - missing data encoded as 0
 
-### 1.8. GFK_URLAUBERTYP
+### 1.8. vac_hab
 Vacation habits
 -  1: Event travelers
 -  2: Family-oriented vacationists
@@ -115,12 +115,12 @@ Vacation habits
 - 11: Active families
 - 12: Without vacation
 
-### 1.9. GREEN_AVANTGARDE
+### 1.9. green_avan
 Membership in environmental sustainability as part of youth
 - 0: not a member of green avantgarde
 - 1: member of green avantgarde
 
-### 1.10. HEALTH_TYP
+### 1.10. health
 Health typology
 - -1: unknown
 -  0: classification not possible
@@ -128,7 +128,7 @@ Health typology
 -  2: sanitary affine  
 -  3: jaunty hedonists
 
-### 1.11. LP_LEBENSPHASE_FEIN
+### 1.11. life_stage_F
 Life stage, fine scale
 -  1: single low-income earners of younger age
 -  2: single low-income earners of middle age
@@ -171,7 +171,7 @@ Life stage, fine scale
 - 39: top earners of middle age from multiperson households
 - 40: top earners at retirement age from multiperson households
 
-### 1.12. LP_LEBENSPHASE_GROB
+### 1.12. life_stage_R
 Life stage, rough scale
 -  1: single low-income and average earners of younger age
 -  2: single low-income and average earners of higher age
@@ -186,7 +186,7 @@ Life stage, rough scale
 - 11: high-income earners of younger age from multiperson households
 - 12: high-income earners of higher age from multiperson households
 
-### 1.13. LP_FAMILIE_FEIN
+### 1.13. family_type_F
 Family type, fine scale
 -  0: unknown
 -  1: single
@@ -201,7 +201,7 @@ Family type, fine scale
 - 10: two-generational household
 - 11: multi-generational household
 
-### 1.14. LP_FAMILIE_GROB
+### 1.14. family_type_R
 Family type, rough scale
 - 0: unknown
 - 1: single (maps to 1 in fine scale)
@@ -210,7 +210,7 @@ Family type, rough scale
 - 4: family (maps to 6-8 in fine scale)
 - 5: multiperson household (maps to 9-11 in fine scale)
 
-### 1.15. LP_STATUS_FEIN
+### 1.15. social_status_F
 Social status, fine scale
 -  1: typical low-income earners
 -  2: orientation-seeking low-income earners
@@ -223,7 +223,7 @@ Social status, fine scale
 -  9: houseowners
 - 10: top earners
 
-### 1.16. LP_STATUS_GROB
+### 1.16. social_status_R
 Social status, rough scale
 - 1: low-income earners (maps to 1-2 in fine scale)
 - 2: average earners (maps to 3-5 in fine scale)
@@ -231,7 +231,7 @@ Social status, rough scale
 - 4: houseowners (maps to 8-9 in fine scale)
 - 5: top earners (maps to 10 in fine scale)
 
-### 1.17. NATIONALITAET_KZ
+### 1.17. nation_from_name
 Nationality based on given name analysis
 - -1: unknown
 -  0: unknown
@@ -239,7 +239,7 @@ Nationality based on given name analysis
 -  2: foreign-sounding
 -  3: assimilated names
 
-### 1.18. PRAEGENDE_JUGENDJAHRE
+### 1.18. youth_ideology
 Dominating movement of person's youth (avantgarde vs. mainstream; east vs. west)
 - -1: unknown
 -  0: unknown
@@ -259,7 +259,7 @@ Dominating movement of person's youth (avantgarde vs. mainstream; east vs. west)
 - 14: 90s - digital media kids (Mainstream, E+W)
 - 15: 90s - ecological awareness (Avantgarde, E+W)
 
-### 1.19. RETOURTYP_BK_S
+### 1.19. return_type
 Return type
 - 0: unknown
 - 1: influenceable Crazy-Shopper
@@ -268,9 +268,9 @@ Return type
 - 4: conservative Low-Returner
 - 5: determined Minimal-Returner
 
-### 1.20. SEMIO_SOZ, SEMIO_FAM, SEMIO_REL, SEMIO_MAT, SEMIO_VERT, SEMIO_LUST,
-###       SEMIO_ERL, SEMIO_KULT, SEMIO_RAT, SEMIO_KRIT, SEMIO_DOM, SEMIO_KAEM,
-###       SEMIO_PFLICHT, SEMIO_TRADV
+### 1.20. pers_social, pers_fam, pers_rel, pers_mat, pers_dream, pers_lust,
+###       pers_event, pers_cult, pers_rat, pers_crit, pers_domi, pers_comb,
+###       pers_duty, pers_trad
 Personality typology, for each dimension:
 - -1: unknown
 -  1: highest affinity
@@ -298,7 +298,7 @@ Dimension translations:
 - PFLICHT: dutiful
 - TRADV: tradional-minded
 
-### 1.21. SHOPPER_TYP
+### 1.21. shopper_typ
 Shopper typology
 - -1: unknown
 -  0: external supplied hedonists
@@ -306,13 +306,13 @@ Shopper typology
 -  2: family-shopper
 -  3: demanding shopper
 
-### 1.22. SOHO_KZ
+### 1.22. office
 Small office / home office flag
 - -1: unknown
 - 0: no small office/home office
 - 1: small office/home office
 
-### 1.23. TITEL_KZ
+### 1.23. academic_tit
 Academic title flag
 - -1: unknown
 -  0: unknown
@@ -322,13 +322,13 @@ Academic title flag
 -  4: Prof. Dr.
 -  5: other
 
-### 1.24. VERS_TYP
+### 1.24. insurance
 Insurance typology
 - -1: unknown
 -  1: social-safety driven
 -  2: individualistic-accepting risks
 
-### 1.25. ZABEOTYP
+### 1.25. energy_cons
 Energy consumption typology
 - -1: unknown
 -  1: green
@@ -343,7 +343,7 @@ Energy consumption typology
 
 ## 2. Household-level features
 
-### 2.1. ALTER_HH
+### 2.1. alter_hh
 Birthdate of head of household
 -  0: unknown / no main age detectable
 -  1: 1895-01-01 to 1899-12-31
@@ -368,13 +368,13 @@ Birthdate of head of household
 - 20: 1990-01-01 to 1994-12-31
 - 21: 1995-01-01 to 1999-12-31
 
-### 2.2. ANZ_PERSONEN
+### 2.2. adults_num
 Number of adults in household
 
-### 2.3. ANZ_TITEL
+### 2.3. academic_tit
 Number of professional academic title holders in household
 
-### 2.4. HH_EINKOMMEN_SCORE
+### 2.4. house_inc
 Estimated household net income
 - -1: unknown
 -  0: unknown
@@ -385,7 +385,7 @@ Estimated household net income
 -  5: lower income
 -  6: very low income
 
-### 2.5. KK_KUNDENTYP
+### 2.5. cons_patt
 Consumer pattern over past 12 months
 - -1: unknown
 -  1: regular customer
@@ -395,7 +395,7 @@ Consumer pattern over past 12 months
 -  5: inactive customer
 -  6: passive customer
 
-### 2.6. W_KEIT_KIND_HH
+### 2.6. children
 Likelihood of children in household
 - -1: unknown
 -  0: unknown
@@ -406,7 +406,7 @@ Likelihood of children in household
 -  5: unlikely
 -  6: very unlikely
 
-### 2.7. WOHNDAUER_2008
+### 2.7. time_in_house
 Length of residence
 - -1: unknown
 -  0: unknown
@@ -424,14 +424,14 @@ Length of residence
 
 ## 3. Building-level features
 
-### 3.1. ANZ_HAUSHALTE_AKTIV
+### 3.1. households_num
 Number of households in the building
 - missing values encoded by 0
 
-### 3.2. ANZ_HH_TITEL
+### 3.2. academic_buils
 Number of professional academic title holders in building
 
-### 3.3. GEBAEUDETYP
+### 3.3. build
 Type of building (residential vs. commercial)
 - -1: unknown
 -  0: unknown
@@ -444,7 +444,7 @@ Type of building (residential vs. commercial)
 -  7: company building
 -  8: mixed building without actually known company
 
-### 3.4. KONSUMNAEHE
+### 3.4. build_to_pos
 Distance from building to point of sale (PoS)
 - 1: building is located in a 125 x 125m grid cell (RA1), which is a
      consumption cell
@@ -460,17 +460,17 @@ Distance from building to point of sale (PoS)
      RA1-consumption cell
 - 7: building is not located in a 10 x 10km range of a consumption cell
 
-### 3.5. MIN_GEBAEUDEJAHR
+### 3.5. build_time
 First year building was mentioned in the database
 - missing values encoded by 0
 
-### 3.6. OST_WEST_KZ
+### 3.6. build_east_west
 Building location via former East / West Germany (GDR / FRG)
 - -1: unknown
 -  O: East (GDR)
 -  W: West (FRG)
 
-### 3.7. WOHNLAGE
+### 3.7. neighbors
 Neighborhood quality (or rural flag)
 - -1: unknown
 -  0: no score calculated
@@ -486,7 +486,7 @@ Neighborhood quality (or rural flag)
 
 ## 4. RR4 micro-cell features
 
-### 4.1. CAMEO_DEUG_2015
+### 4.1. cameo_R
 German CAMEO: Wealth / Life Stage Typology, rough scale
 - -1: unknown
 -  1: upper class
@@ -500,7 +500,7 @@ German CAMEO: Wealth / Life Stage Typology, rough scale
 -  9: urban working class
 -  X: unknown
 
-### 4.2. CAMEO_DEU_2015
+### 4.2. cameo_F
 German CAMEO: Wealth / Life Stage Typology, detailed scale
 - 1A: Work-Life-Balance
 - 1B: Wealthy Best Ager
@@ -548,7 +548,7 @@ German CAMEO: Wealth / Life Stage Typology, detailed scale
 - 9E: Socking Away
 - XX: unknown
 
-### 4.3. CAMEO_INTL_2015
+### 4.3. cameo_int
 German CAMEO: Wealth / Life Stage Typology, mapped to international code
 - -1: unknown
 - 11: Wealthy Households - Pre-Family Couples & Singles
@@ -582,7 +582,7 @@ German CAMEO: Wealth / Life Stage Typology, mapped to international code
 
 ## 5. RR3 micro-cell features
 
-### 5.1. KBA05_ANTG1
+### 5.1. 1to2_fam_build
 Number of 1-2 family houses in the microcell
 - -1: unknown
 -  0: no 1-2 family homes
@@ -591,7 +591,7 @@ Number of 1-2 family houses in the microcell
 -  3: high share of 1-2 family homes
 -  4: very high share of 1-2 family homes
 
-### 5.2. KBA05_ANTG2
+### 5.2. 3to5_fam_build
 Number of 3-5 family houses in the microcell
 - -1: unknown
 -  0: no 3-5 family homes
@@ -600,7 +600,7 @@ Number of 3-5 family houses in the microcell
 -  3: high share of 3-5 family homes
 -  4: very high share of 3-5 family homes
 
-### 5.3. KBA05_ANTG3
+### 5.3. 6to10_fam_build
 Number of 6-10 family houses in the microcell
 - -1: unknown
 -  0: no 6-10 family homes
@@ -608,14 +608,14 @@ Number of 6-10 family houses in the microcell
 -  2: average share of 6-10 family homes
 -  3: high share of 6-10 family homes
 
-### 5.4. KBA05_ANTG4
+### 5.4. 10+_fam_build
 Number of 10+ family houses in the microcell
 - -1: unknown
 -  0: no 10+ family homes
 -  1: lower share of 10+ family homes
 -  2: high share of 10+ family homes
 
-### 5.5. KBA05_BAUMAX
+### 5.5. pop_build
 Most common building type within the microcell
 - -1: unknown
 -  0: unknown
@@ -625,7 +625,7 @@ Most common building type within the microcell
 -  4: mainly 10+ family homes in the microcell
 -  5: mainly business buildings in the microcell
 
-### 5.6. KBA05_GBZ
+### 5.6. build_num
 Number of buildings in the microcell
 - -1: unknown
 -  0: unknown
@@ -639,7 +639,7 @@ Number of buildings in the microcell
 
 ## 6. Postcode-level features
 
-### 6.1. BALLRAUM
+### 6.1. build_to_town
 Distance to nearest urban center
 - -1: unknown
 -  1: less than 10 km
@@ -650,7 +650,7 @@ Distance to nearest urban center
 -  6: 50 - 100 km
 -  7: more than 100 km
 
-### 6.2. EWDICHTE
+### 6.2. build_dens
 Density of households per square kilometer
 - -1: unknown
 -  1: less than 34 households per km^2
@@ -660,7 +660,7 @@ Density of households per square kilometer
 -  5: 320 - 999 households per km^2
 -  6: more than 999 households per km^2
 
-### 6.3. INNENSTADT
+### 6.3. build_to_city
 Distance to city center (downtown)
 - -1: unknown
 -  1: in city center
@@ -676,7 +676,7 @@ Distance to city center (downtown)
 
 ## 7. RR1 region features
 
-### 7.1. GEBAEUDETYP_RASTER
+### 7.1. res_to_com
 Ratio of residential to commercial activity
 - 1: business cell
 - 2: mixed cell with high business share
@@ -684,7 +684,7 @@ Ratio of residential to commercial activity
 - 4: mixed cell with low business share
 - 5: residential cell
 
-### 7.2. KKK
+### 7.2. purchase_power
 Purchasing power in region
 - -1; unknown
 -  0: unknown
@@ -693,7 +693,7 @@ Purchasing power in region
 -  3: average
 -  4: low
 
-### 7.3. MOBI_REGIO
+### 7.3. movement
 Movement patterns
 - 1: very high movement
 - 2: high movement
@@ -702,7 +702,7 @@ Movement patterns
 - 5: very low movement
 - 6: none
 
-### 7.4. ONLINE_AFFINITAET
+### 7.4. online
 Online affinity
 - 0: none
 - 1: low
@@ -711,7 +711,7 @@ Online affinity
 - 4: very high
 - 5: highest
 
-### 7.5. REGIOTYP
+### 7.5. neigh_type
 Neighborhood typology
 - -1: unknown
 -  0: unknown
@@ -727,10 +727,10 @@ Neighborhood typology
 
 ## 8. PLZ8 macro-cell features
 
-### 8.1. KBA13_ANZAHL_PKW
+### 8.1. cars_num
 Number of cars in the PLZ8 region
 
-### 8.2. PLZ8_ANTG1
+### 8.2. 1to2_fam_plz8
 Number of 1-2 family houses in the PLZ8 region
 - -1: unknown
 -  0: no 1-2 family homes
@@ -739,7 +739,7 @@ Number of 1-2 family houses in the PLZ8 region
 -  3: high share of 1-2 family homes
 -  4: very high share of 1-2 family homes
 
-### 8.3. PLZ8_ANTG2
+### 8.3. 3to5_fam_plz8
 Number of 3-5 family houses in the PLZ8 region
 - -1: unknown
 -  0: no 3-5 family homes
@@ -748,7 +748,7 @@ Number of 3-5 family houses in the PLZ8 region
 -  3: high share of 3-5 family homes
 -  4: very high share of 3-5 family homes
 
-### 8.4. PLZ8_ANTG3
+### 8.4. 6to10_fam_plz8
 Number of 6-10 family houses in the PLZ8 region
 - -1: unknown
 -  0: no 6-10 family homes
@@ -756,14 +756,14 @@ Number of 6-10 family houses in the PLZ8 region
 -  2: average share of 6-10 family homes
 -  3: high share of 6-10 family homes
 
-### 8.5. PLZ8_ANTG4
+### 8.5. 10+_fam_plz8
 Number of 10+ family houses in the PLZ8 region
 - -1: unknown
 -  0: no 10+ family homes
 -  1: lower share of 10+ family homes
 -  2: high share of 10+ family homes
 
-### 8.6. PLZ8_BAUMAX
+### 8.6. pop_build_plz8
 Most common building type within the PLZ8 region
 - -1: unknown
 -  0: unknown
@@ -773,7 +773,7 @@ Most common building type within the PLZ8 region
 -  4: mainly 10+ family homes
 -  5: mainly business buildings
 
-### 8.7. PLZ8_HHZ
+### 8.7. houses_num_plz8
 Number of households within the PLZ8 region
 - -1: unknown
 -  1: less than 130 households
@@ -782,7 +782,7 @@ Number of households within the PLZ8 region
 -  4: 600-849 households
 -  5: more than 849 households
 
-### 8.8. PLZ8_GBZ
+### 8.8. build_num_plz8
 Number of buildings within the PLZ8 region
 - -1: unknown
 -  1: less than 60 buildings
@@ -795,7 +795,7 @@ Number of buildings within the PLZ8 region
 
 ## 9. Community-level features
 
-### 9.1. ARBEIT
+### 9.1. comm_unemp
 Share of unemployment in community
 - -1: unknown
 -  1: very low
@@ -805,7 +805,7 @@ Share of unemployment in community
 -  5: very high
 -  9: unknown
 
-### 9.2. ORTSGR_KLS9
+### 9.2. comm_size
 Size of community
 - -1: unknown
 -  1: <= 2,000 inhabitants
@@ -818,7 +818,7 @@ Size of community
 -  8: 300,001 to 700,000 inhabitants
 -  9: > 700,000  inhabitants
 
-### 9.3. RELAT_AB
+### 9.3. comm_to_county_unemp
 Share of unemployment relative to county in which community is contained
 - -1: unknown
 -  1: very low
